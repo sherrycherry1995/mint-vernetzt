@@ -8,8 +8,13 @@ export default {
   name: "Home",
   data: function () {
     return {
-      title: 'Mint vernetzt',
-    }
+      title: "MINTvernetzt Hackathon Matchingtool",
+    };
   },
 };
 </script>
+<style lang="scss">
+h1 {
+  color: $headline-color;
+}
+</style>
