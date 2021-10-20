@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-  name: "Interest",
+  name: "Role",
   data() {
     return {
       name: "",
@@ -22,10 +22,10 @@ export default {
   },
   methods: {
     prev() {
-      this.$parent.changeView("role");
+      this.$parent.changeView("category");
     },
     next() {
-     // this.$parent.changeView("category");
+      this.$parent.changeView("interest");
     },
   },
 };
