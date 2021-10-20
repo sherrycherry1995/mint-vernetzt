@@ -1,9 +1,17 @@
 <template>
   <div id="app">
-    <Profil v-if="current === 'profil'" />
-    <Category v-if="current === 'category'" />
-    <Role v-if="current === 'role'" />
-    <Interest v-if="current === 'interest'" />
+    <div class="content-steps">
+        <Profil :step="current" :maxSteps="max" v-if="current === 0" />
+        <Category :step="current" :maxSteps="max" v-if="current === 1"/>
+        <Role :step="current" :maxSteps="max" v-if="current === 2"/>
+        <Interest :step="current" :maxSteps="max" v-if="current === 3" />
+    </div>
+    <div class="navigation">
+      <div class="container">
+        <button class="" @click="prevView" v-if="current !== 0">go back</button>
+        <button class="button" @click="nextView" v-if="current !== max">Next</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,12 +31,16 @@ export default {
   },
   data() {
     return {
-      current: "profil",
+      current: 0,
+      max: 4,
     };
   },
   methods: {
-    changeView(view) {
-      this.current = view;
+    prevView() {
+      this.current--;
+    },
+    nextView() {
+      this.current++;
     },
   },
 };
@@ -37,7 +49,7 @@ export default {
 #app {
   max-width: 380px;
   margin: 0 auto;
-  padding: 20px 24px 120px;
+  padding: 20px 24px 40px;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
@@ -54,7 +66,7 @@ export default {
 }
 
 .navigation .container {
-  max-width: 380px;
+  max-width: 340px;
   width: 100%;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -89,6 +101,15 @@ button {
   cursor: pointer;
 }
 
+.button:first-child:last-child {
+  width: calc(100% - 32px);
+  margin-left:0;
+}
+
+.button:last-child {
+  margin-left: auto;
+}
+
 .go-back {
   width: 90.7px;
   height: 20px;
@@ -97,6 +118,18 @@ button {
   font-family: Poppins;
   font-size: 12px;
   font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: #23262f;
+}
+
+.steps {
+  margin: 8px 0 8px 0;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.67;

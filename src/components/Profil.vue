@@ -1,5 +1,6 @@
 <template>
-  <div class="profil">
+  <div class="profil slide">
+    <div class="steps">{{ step + 1}} of {{maxSteps}}</div>
     <div class="image">
       <img src="../assets/interest.svg" />
     </div>
@@ -32,25 +33,19 @@
       <label for="about" class="Display-name">About me</label>
       <textarea type="about" class="single-input-field-style">Text</textarea>
     </div>
-    <div class="navigation">
-      <div class="container">
-      <button class="button" @click="next">Next</button>
-      </div>
-    </div>
   </div>
 </template>
 <script>
 export default {
   name: "Profil",
+  props: {
+    step: Number,
+    maxSteps: Number,
+  },
   data() {
     return {
       name: "",
     };
-  },
-  methods: {
-    next(){
-      this.$parent.changeView('category')
-    }
   },
 };
 </script>
@@ -88,7 +83,7 @@ export default {
 .Display-name {
   width: 112px;
   height: 24px;
-  margin: 0 198px 5px 0;
+  margin: 0 0 5px 0;
   font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
@@ -100,7 +95,7 @@ export default {
 }
 
 .single-input-field-style {
-  width: 100%;
+  width: calc(100% - 32px);
   margin: 4px 0 8px;
   padding: 12px 16px 12px 16px;
   border-radius: 12px;
@@ -116,10 +111,6 @@ export default {
   line-height: 1.71;
   letter-spacing: normal;
   color: #323d5d;
-}
-
-.button {
-   width: 100%;
 }
 
 textarea {

@@ -1,7 +1,8 @@
 <template>
-  <div class="step">
+  <div class="step slide">
+     <div class="steps">{{ step + 1}} of {{maxSteps}}</div>
     <div class="image">
-      <img src="../assets/interest.svg" />
+      <img src="../assets/category.png" />
     </div>
     <div class="intro">
       <div class="headline">Which MINT are you?</div>
@@ -24,12 +25,6 @@
         </div>
       </div>
     </div>
-    <div class="navigation">
-      <div class="container">
-        <button class="go-back" @click="prev">go back</button>
-        <button class="button" @click="next">Next</button>
-      </div>
-    </div>
   </div>
 </template>
 <script>
@@ -37,6 +32,10 @@ import data from "../data/data";
 
 export default {
   name: "Category",
+  props: {
+    step: Number,
+    maxSteps: Number,
+  },
   data() {
     return {
       categories: data.categories,
@@ -44,10 +43,10 @@ export default {
   },
   methods: {
     prev() {
-      this.$parent.changeView("profil");
+      this.$parent.prevView();
     },
     next() {
-      this.$parent.changeView("role");
+      this.$parent.nextView();
     },
   },
 };
@@ -92,21 +91,15 @@ export default {
   color: #23262f;
 }
 
-.button {
-  padding: 12px 32px;
-  margin-left: auto;
-}
-
 .categories {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-gap: 8px;
-  grid-auto-rows: 92px;
+  grid-auto-rows: 72px;
 }
 
-
 .category {
-  padding: 24px;
+  padding: 12px 24px;
   border-radius: 16px;
   border: solid 1px #8f9bb9;
   background-color: #f4f5fc;

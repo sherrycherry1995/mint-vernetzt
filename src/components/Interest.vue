@@ -1,5 +1,6 @@
 <template>
-  <div class="step">
+  <div class="step slide">
+    <div class="steps">{{ step + 1 }} of {{ maxSteps }}</div>
     <div class="image">
       <img src="../assets/interest.svg" />
     </div>
@@ -24,12 +25,6 @@
         </div>
       </div>
     </div>
-    <div class="navigation">
-      <div class="container">
-        <button class="go-back" @click="prev">go back</button>
-        <button class="button" @click="next">Next</button>
-      </div>
-    </div>
   </div>
 </template>
 <script>
@@ -37,6 +32,10 @@ import data from "../data/data";
 
 export default {
   name: "Interest",
+  props: {
+    step: Number,
+    maxSteps: Number,
+  },
   data() {
     return {
       interests: data.interests,
@@ -44,10 +43,10 @@ export default {
   },
   methods: {
     prev() {
-      this.$parent.changeView("role");
+      this.$parent.prevView();
     },
     next() {
-      // this.$parent.changeView("category");
+      this.$parent.nextView();
     },
   },
 };
@@ -90,11 +89,6 @@ export default {
   letter-spacing: normal;
   text-align: center;
   color: #23262f;
-}
-
-.button {
-  padding: 12px 32px;
-  margin-left: auto;
 }
 
 .interests {
