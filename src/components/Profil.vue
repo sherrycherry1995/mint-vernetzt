@@ -1,6 +1,5 @@
 <template>
   <div class="profil">
-    <!-- <font-awesome-icon icon="user-secret" /> -->
     <h1>Create your profile</h1>
     <div class="Rectangle"></div>
     <span class="Upload-a-picture"> Upload a picture </span>

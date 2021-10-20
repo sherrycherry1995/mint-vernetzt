@@ -1,9 +1,16 @@
 <template>
-  <div class="interest">
-    <img src="../assets/interest.png" />
-    <div class="Rectangle">
-      <span class="Select-your-interest"> Select your interests </span>
+  <div class="step">
+    <div class="image">
+      <img src="../assets/interest.png" />
     </div>
+    <div class="intro">
+      <div class="headline">Which MINT are you?</div>
+      <div class="description">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod.
+      </div>
+    </div>
+    <div class="content"></div>
     <div class="navigation">
       <div class="container">
         <button class="go-back" @click="prev">go back</button>
@@ -31,21 +38,22 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.Rectangle {
-  width: 390px;
-  height: 508px;
-  margin: 25px 0 0;
-  padding: 14px 32px 0;
-  border-radius: 16px;
-  box-shadow: 0 4px 14px 1px #b1b5c3;
-  background-color: #f4f5f6;
+.image {
+  width: 270px;
+  height: 200px;
+  margin: 20px auto 32px;
 }
-.Select-your-interest {
-  width: 326px;
-  height: 40px;
-  margin: 0 0 8px;
-  background-color: #23262f;
-  font-family: DMSans;
+
+.image img {
+  display: block;
+  width: 100%;
+  height: 1005;
+  object-fit: contain;
+}
+
+.headline {
+  margin: 32px auto 8px;
+  font-family: $second-font;
   font-size: 32px;
   font-weight: bold;
   font-stretch: normal;
@@ -56,8 +64,21 @@ export default {
   color: #23262f;
 }
 
+.description {
+  margin: 8px auto 33px;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+  color: #23262f;
+}
+
 .button {
-  padding: 16px 32px;
+  padding: 12px 32px;
   margin-left: auto;
 }
 </style>

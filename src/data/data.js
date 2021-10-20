@@ -1,3 +1,5 @@
 export default {
-  tags: ["video", "photo", "audio"],
+  interests : [
+    "Digitalisierung", "Umwelt & Effienz", "Nachhaltigkeit", "Mobilität", "Energie", "Wissenschaft", "Soziales", "Video", "Workshops", "Digitalisierung", "Umwelt & Effienz", "Nachhaltigkeit", "Mobilität", "Energie", "Wissenschaft", "Soziales", "Video", "Workshops"
+  ],
 };
