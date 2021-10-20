@@ -59,6 +59,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+h1 {
+  text-align: center;
+}
+
 .Rectangle {
   width: 104px;
   height: 104px;
@@ -84,19 +88,24 @@ export default {
 }
 
 .single-input-field-style {
-  width: 310px;
-  height: 48px;
+  width: 100%;
   margin: 5px 0 0;
   padding: 12px 15px 12px 16px;
   border-radius: 12px;
   background-color: #f4f5fc;
+  outline: none;
+  border: none;
+  box-shadow: none;
 }
 
 .button {
   width: 310px;
-  height: 48px;
   padding: 14px 31.1px 18px 33px;
   border-radius: 12px;
   background-color: #3b71fe;
+  color: white;
+  text-align: center;
+  margin-top: 33px;
+  margin-bottom: 33px;
 }
 </style>
