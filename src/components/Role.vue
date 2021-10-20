@@ -1,14 +1,29 @@
 <template>
   <div class="step">
-     <div class="image">
-      <img src="../assets/interest.png" />
+    <div class="image">
+      <img src="../assets/interest.svg" />
     </div>
     <div class="intro">
       <div class="headline">Your MINT role</div>
-      <div class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</div>
+      <div class="description">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod.
+      </div>
     </div>
     <div class="content">
+      <div class="roles">
+        <div
+          class="role"
+          v-for="(role, key) in roles"
+          v-bind:key="`role-${key}`"
+        >
+          <span class="icon">
+            <font-awesome-icon icon="graduation-cap" />
+          </span>
+          <span class="title">{{ role }}</span>
+        </div>
       </div>
+    </div>
     <div class="navigation">
       <div class="container">
         <button class="go-back" @click="prev">go back</button>
@@ -18,11 +33,13 @@
   </div>
 </template>
 <script>
+import data from "../data/data";
+
 export default {
   name: "Role",
   data() {
     return {
-      name: "",
+      roles: data.roles,
     };
   },
   methods: {
@@ -78,5 +95,41 @@ export default {
 .button {
   padding: 12px 32px;
   margin-left: auto;
+}
+
+.roles {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-gap: 8px;
+  grid-auto-rows: 92px;
+}
+
+.role {
+  padding: 16px 0;
+  border-radius: 16px;
+  border: solid 1px #8f9bb9;
+  background-color: #f4f5fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .icon {
+  }
+
+  .title {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: center;
+    color: #7a8ab3;
+    max-width: calc(100% - 32px);
+    hyphens: auto;
+    word-wrap: break-word;
+  }
 }
 </style>

@@ -1,8 +1,9 @@
 <template>
   <div class="profil">
-    <h1>Create your profile</h1>
-    <div class="Rectangle"></div>
-    <span class="Upload-a-picture"> Upload a picture </span>
+    <div class="image">
+      <img src="../assets/interest.svg" />
+    </div>
+    <div class="headline">Create your profile</div>
     <div class="input">
       <label for="name" class="Display-name">Display name</label>
       <input
@@ -54,9 +55,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-h1 {
+.headline {
   text-align: center;
-  margin: 32px 24px 24px;
+  margin: 32px auto 24px;
   font-family: $second-font;
   font-size: 32px;
   font-weight: bold;
@@ -69,13 +70,19 @@ h1 {
   margin-bottom: 24px;
 }
 
-.Rectangle {
-  width: 104px;
+.image {
   height: 104px;
-  margin: 0 63px;
-  padding: 24px 13px 20.9px;
+  width: 104px;
   border-radius: 50%;
-  background-color: #3b71fe;
+  margin: 14px auto 32px;
+  overflow: hidden;
+}
+
+.image > img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  display: block;
 }
 
 .Display-name {
@@ -90,21 +97,6 @@ h1 {
   line-height: 1.5;
   letter-spacing: normal;
   color: #323d5d;
-}
-
-.Upload-a-picture {
-  width: 230px;
-  height: 24px;
-  margin: 104px 0 0;
-  font-family: Poppins;
-  font-size: 14px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.71;
-  letter-spacing: normal;
-  text-align: center;
-  color: #353945;
 }
 
 .single-input-field-style {

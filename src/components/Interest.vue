@@ -1,7 +1,7 @@
 <template>
   <div class="step">
     <div class="image">
-      <img src="../assets/interest.png" />
+      <img src="../assets/interest.svg" />
     </div>
     <div class="intro">
       <div class="headline">Select your interests</div>
@@ -15,9 +15,11 @@
         <div
           class="interest"
           v-for="(interest, key) in interests"
-          v-bind:key="`interst-${key}`"
+          v-bind:key="`interest-${key}`"
         >
-          <span class="icon"> <font-awesome-icon icon="graduation-cap" /> </span>
+          <span class="icon">
+            <font-awesome-icon icon="graduation-cap" />
+          </span>
           <span class="title">{{ interest }}</span>
         </div>
       </div>
@@ -113,7 +115,6 @@ export default {
   flex-direction: column;
 
   .icon {
-
   }
 
   .title {
@@ -126,6 +127,10 @@ export default {
     letter-spacing: normal;
     text-align: center;
     color: #7a8ab3;
+    max-width: 100%;
+    max-width: calc(100% - 32px);
+    hyphens: auto;
+    word-wrap: break-word;
   }
 }
 </style>

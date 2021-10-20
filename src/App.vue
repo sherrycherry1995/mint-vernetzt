@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      current: "interest",
+      current: "profil",
     };
   },
   methods: {

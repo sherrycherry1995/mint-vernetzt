@@ -1,7 +1,7 @@
 <template>
   <div class="step">
     <div class="image">
-      <img src="../assets/interest.png" />
+      <img src="../assets/interest.svg" />
     </div>
     <div class="intro">
       <div class="headline">Which MINT are you?</div>
@@ -10,7 +10,20 @@
         eirmod.
       </div>
     </div>
-    <div class="content"></div>
+    <div class="content">
+      <div class="categories">
+        <div
+          class="category"
+          v-for="(category, key) in categories"
+          v-bind:key="`category-${key}`"
+        >
+          <span class="icon">
+            <font-awesome-icon icon="graduation-cap" />
+          </span>
+          <span class="title">{{ category }}</span>
+        </div>
+      </div>
+    </div>
     <div class="navigation">
       <div class="container">
         <button class="go-back" @click="prev">go back</button>
@@ -20,11 +33,13 @@
   </div>
 </template>
 <script>
+import data from "../data/data";
+
 export default {
   name: "Category",
   data() {
     return {
-      name: "",
+      categories: data.categories,
     };
   },
   methods: {
@@ -80,5 +95,48 @@ export default {
 .button {
   padding: 12px 32px;
   margin-left: auto;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-gap: 8px;
+  grid-auto-rows: 92px;
+}
+
+
+.category {
+  padding: 24px;
+  border-radius: 16px;
+  border: solid 1px #8f9bb9;
+  background-color: #f4f5fc;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+
+  .icon {
+    width: 64px;
+  }
+
+  .icon > svg {
+    display: block;
+    width: 100%;
+  }
+
+  .title {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: center;
+    color: #7a8ab3;
+    max-width: calc(100% - 32px);
+    hyphens: auto;
+    word-wrap: break-word;
+  }
 }
 </style>
