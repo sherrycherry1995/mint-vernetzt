@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Home/>
+    <Profil v-if="current === 'profil'"/>
+    <Interest v-if="current === 'interest'" />
   </div>
 </template>
 
 <script>
-import Home from './components/Home.vue'
+import Profil from './components/Profil.vue';
+import Interest from './components/Interest.vue';
 
 export default {
   name: 'App',
   components: {
-    Home
+    Profil,
+    Interest
+  }, 
+  data(){
+    return {
+      current : 'profil',
+    }
   }
 }
 </script>
