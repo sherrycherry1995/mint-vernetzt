@@ -134,18 +134,6 @@ export default {
     border: solid 1px #7290d5;
   }
 
-  @media (hover: hover) {
-    &:hover {
-      border: solid 1px #7290d5;
-    }
-  }
-
-  @media (hover: none) {
-   &:hover {
-      border: none;
-    }
-  }
-
   .icon {
   }
 
