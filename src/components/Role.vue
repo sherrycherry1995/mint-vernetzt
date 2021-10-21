@@ -140,6 +140,12 @@ export default {
     }
   }
 
+  @media (hover: none) {
+   &:hover {
+      border: none;
+    }
+  }
+
   .icon {
   }
 

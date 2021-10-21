@@ -14,7 +14,11 @@
     <div class="content">
       <div class="interests">
         <div
-          v-bind:class="profilInterests.indexOf(interest) === -1 ? 'interest' : 'interest active'"
+          v-bind:class="
+            profilInterests.indexOf(interest) === -1
+              ? 'interest'
+              : 'interest active'
+          "
           v-for="(interest, key) in interests"
           v-bind:key="`interest-${key}`"
           :data-key="`interest-${key}`"
@@ -52,7 +56,7 @@ export default {
   data() {
     return {
       interests: data.interests,
-      profilInterests :this.$parent.$data.profil.interests,
+      profilInterests: this.$parent.$data.profil.interests,
     };
   },
   methods: {
@@ -137,6 +141,11 @@ export default {
     }
   }
 
+  @media (hover: none) {
+   &:hover {
+      border: none;
+    }
+  }
 
   .icon {
   }

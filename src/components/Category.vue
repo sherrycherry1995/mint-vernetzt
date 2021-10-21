@@ -159,6 +159,12 @@ export default {
     }
   }
 
+  @media (hover: none) {
+   &:hover {
+      border: none;
+    }
+  }
+
   .icon {
     width: 64px;
   }
