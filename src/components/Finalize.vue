@@ -3,7 +3,7 @@
     <div class="steps">{{ step + 1 }} of {{ maxSteps }}</div>
     <div class="header">
       <div class="image">
-        <img src="../assets/interest.svg" />
+        <img src="../assets/avatar.png" />
       </div>
       <div class="headline">Hi, I'm Mira McCormick</div>
     </div>
@@ -209,9 +209,9 @@ export default {
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .image {
@@ -226,9 +226,11 @@ export default {
 
 .image img {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 130%;
+  height: 130%;
+  object-fit: cover;
+  margin-top: -12%;
+  margin-left: -12%;
 }
 
 .headline {

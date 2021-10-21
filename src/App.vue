@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    <div class="content-steps">
-        <Create :step="current" :maxSteps="max" v-if="current === 0" />
-        <Category :step="current" :maxSteps="max" v-if="current === 1"/>
-        <Role :step="current" :maxSteps="max" v-if="current === 2"/>
-        <Interest :step="current" :maxSteps="max" v-if="current === 3" />
-        <Finalize :step="current" :maxSteps="max" v-if="current === 4" />
-    </div>
+    <transition
+      name="fade"
+      mode="out-in"
+      :enter-class="`${transitionEnter}`"
+      :leave-to-class="`${transitionLeave}`"
+    >
+      <Create :step="current" :maxSteps="max" v-if="current === 0" />
+      <Category :step="current" :maxSteps="max" v-if="current === 1" />
+      <Role :step="current" :maxSteps="max" v-if="current === 2" />
+      <Interest :step="current" :maxSteps="max" v-if="current === 3" />
+      <Finalize :step="current" :maxSteps="max" v-if="current === 4" />
+    </transition>
     <div class="navigation">
       <div class="container">
         <button class="" @click="prevView" v-if="current !== 0">go back</button>
-        <button class="button" @click="nextView" v-if="current !== max">Next</button>
+        <button class="button" @click="nextView" v-if="current + 1 !== max">
+          Next
+        </button>
       </div>
     </div>
   </div>
@@ -30,25 +37,62 @@ export default {
     Interest,
     Category,
     Role,
-    Finalize
+    Finalize,
   },
   data() {
     return {
       current: 0,
       max: 5,
+      transitionEnter: "fade-enter",
+      transitionLeave: "fade-leave-active",
     };
   },
   methods: {
     prevView() {
       this.current--;
+      this.transitionEnter = "fade-enter-left";
+      this.transitionLeave = "fade-leave-active-left";
     },
     nextView() {
       this.current++;
+      this.transitionEnter = "fade-enter";
+      this.transitionLeave = "fade-enter";
     },
   },
 };
 </script>
 <style>
+.fade-enter-active,
+.fade-leave-active,
+.fade-leave-active-left,
+.fade-enter-left .fade-enter,
+.fade-leave-to {
+  transition: all 0.5s linear;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0.3;
+}
+
+.fade-enter {
+  transform: translateX(50px);
+}
+.fade-leave-active {
+  transform: translateX(-50px);
+}
+
+.fade-enter-left {
+  transform: translateX(-50px);
+}
+.fade-leave-active-left {
+  transform: translateX(50px);
+}
+
+html,
+body,
+#app {
+  overflow-x: hidden;
+}
+
 #app {
   max-width: 380px;
   margin: 0 auto;
@@ -66,13 +110,14 @@ export default {
   display: flex;
   justify-content: center;
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.17);
+  z-index: 50;
 }
 
 .navigation .container {
   max-width: 340px;
   width: 100%;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 24px;
+  padding-bottom: 32px;
   display: flex;
 }
 
@@ -106,7 +151,7 @@ button {
 
 .button:first-child:last-child {
   width: calc(100% - 32px);
-  margin-left:0;
+  margin-left: 0;
 }
 
 .button:last-child {
