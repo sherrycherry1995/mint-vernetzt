@@ -149,9 +149,14 @@ export default {
   transition: border 0.3s ease;
   cursor: pointer;
 
-  &.active,
-  &:hover {
+  &.active {
     border: solid 1px #7290d5;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border: solid 1px #7290d5;
+    }
   }
 
   .icon {
