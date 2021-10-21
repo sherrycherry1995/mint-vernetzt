@@ -15,8 +15,8 @@
     <div class="navigation">
       <div class="container">
         <button class="" @click="prevView" v-if="current !== 0">go back</button>
-        <button class="button" @click="nextView" v-if="current + 1 !== max">
-          Next
+        <button class="button" @click="nextView">
+          {{ nextText }}
         </button>
       </div>
     </div>
@@ -39,9 +39,24 @@ export default {
     Role,
     Finalize,
   },
+  computed: {
+    nextText() {
+      switch (this.current) {
+        case 1:
+          return "Roles";
+        case 2:
+          return "Interests";
+        case 3:
+        case 4:
+          return "Finalize";
+        default:
+          return "next";
+      }
+    },
+  },
   data() {
     return {
-      current: 1,
+      current: 2,
       max: 5,
       transitionEnter: "fade-enter",
       transitionLeave: "fade-leave-active",
@@ -58,6 +73,10 @@ export default {
       }, 500);
     },
     nextView() {
+      if(this.current === 4){
+        return;
+      }
+
       this.current++;
       this.transitionEnter = "fade-enter";
       this.transitionLeave = "fade-enter";
@@ -143,7 +162,7 @@ button {
 }
 
 .button {
-  padding: 16px 32px 16px 32px;
+  padding: 12px 16px;
   border-radius: 12px;
   background-color: #3b71fe;
   color: white;
@@ -185,7 +204,7 @@ button {
 }
 
 .steps {
-  margin: 8px 0 8px 0;
+  margin: 8px 0 20px 0;
   font-family: Poppins;
   font-size: 12px;
   font-weight: 600;

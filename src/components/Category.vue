@@ -99,14 +99,18 @@ export default {
 .category {
   padding: 16px;
   border-radius: 16px;
-  border: solid 1px #8f9bb9;
-  background-color: #f4f5fc;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  border: solid 1px #7290d5;
   background-color: #e6ecfc;
+  transition: border 0.3s ease;
+  cursor: pointer;
+
+  
+  &.active, &:hover {
+     border: solid 1px #7290d5;
+  }
 
   .icon {
     width: 64px;
