@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <div class="content-steps">
-        <Profil :step="current" :maxSteps="max" v-if="current === 0" />
+        <Create :step="current" :maxSteps="max" v-if="current === 0" />
         <Category :step="current" :maxSteps="max" v-if="current === 1"/>
         <Role :step="current" :maxSteps="max" v-if="current === 2"/>
         <Interest :step="current" :maxSteps="max" v-if="current === 3" />
+        <Finalize :step="current" :maxSteps="max" v-if="current === 4" />
     </div>
     <div class="navigation">
       <div class="container">
@@ -16,23 +17,25 @@
 </template>
 
 <script>
-import Profil from "./components/Profil.vue";
+import Create from "./components/Create.vue";
 import Interest from "./components/Interest.vue";
 import Category from "./components/Category.vue";
 import Role from "./components/Role.vue";
+import Finalize from "./components/Finalize.vue";
 
 export default {
   name: "App",
   components: {
-    Profil,
+    Create,
     Interest,
     Category,
     Role,
+    Finalize
   },
   data() {
     return {
       current: 0,
-      max: 4,
+      max: 5,
     };
   },
   methods: {

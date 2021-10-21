@@ -94,7 +94,7 @@ export default {
 .roles {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-  grid-gap: 8px;
+  grid-gap: 16px;
   grid-auto-rows: 92px;
 }
 

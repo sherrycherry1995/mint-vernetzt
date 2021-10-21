@@ -36,5 +36,10 @@ export default {
     "Video",
     "Workshops",
   ],
-
+  selected: [
+    "Wissenschaft",
+    "Soziales",
+    "Video",
+    "Workshops",
+  ]
 };
