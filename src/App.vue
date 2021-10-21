@@ -52,7 +52,7 @@ export default {
 #app {
   max-width: 380px;
   margin: 0 auto;
-  padding: 20px 24px 40px;
+  padding: 20px 24px 92px;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }

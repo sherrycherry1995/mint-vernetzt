@@ -1,6 +1,6 @@
 <template>
   <div class="profil slide">
-    <div class="steps">{{ step + 1}} of {{maxSteps}}</div>
+    <div class="steps">{{ step + 1 }} of {{ maxSteps }}</div>
     <div class="image">
       <img src="../assets/interest.svg" />
     </div>
@@ -33,6 +33,9 @@
       <label for="about" class="Display-name">About me</label>
       <textarea type="about" class="single-input-field-style">Text</textarea>
     </div>
+    How can you be contacted? <br>
+    Phone <br>
+    E-Mail
   </div>
 </template>
 <script>
