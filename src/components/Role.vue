@@ -14,9 +14,13 @@
     <div class="content">
       <div class="roles">
         <div
-          class="role"
+          v-bind:class="
+            profilRoles.indexOf(role) === -1 ? 'role' : 'role active'
+          "
           v-for="(role, key) in roles"
           v-bind:key="`role-${key}`"
+          :data-key="`role-${key}`"
+          @click="updateRoles(role, key)"
         >
           <span class="icon">
             <svg
@@ -50,14 +54,20 @@ export default {
   data() {
     return {
       roles: data.roles,
+      profilRoles: this.$parent.$data.profil.roles,
     };
   },
   methods: {
-    prev() {
-      this.$parent.prevView();
-    },
-    next() {
-      this.$parent.nextView();
+    updateRoles(role) {
+      let roles = this.$parent.$data.profil.roles;
+      let index = roles.indexOf(role);
+
+      if (index !== -1) {
+        this.$parent.$data.profil.roles.splice(index, 1);
+        return;
+      }
+
+      this.$parent.$data.profil.roles.push(role);
     },
   },
 };

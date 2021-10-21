@@ -60,6 +60,12 @@ export default {
       max: 5,
       transitionEnter: "fade-enter",
       transitionLeave: "fade-leave-active",
+      profil: {
+        categories: [],
+        roles: [],
+        interests: [],
+        otherValue: '',
+      },
     };
   },
   methods: {
@@ -73,7 +79,7 @@ export default {
       }, 500);
     },
     nextView() {
-      if(this.current === 4){
+      if (this.current === 4) {
         return;
       }
 
@@ -153,7 +159,9 @@ body,
   display: flex;
 }
 
-button {
+button,
+input,
+textarea {
   background: none;
   color: inherit;
   border: none;
@@ -161,6 +169,7 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+  -webkit-appearance: none;
 }
 
 .button {
@@ -215,5 +224,48 @@ button {
   line-height: 1.67;
   letter-spacing: normal;
   color: #23262f;
+}
+
+.Display-name {
+  width: 112px;
+  height: 24px;
+  margin: 0 0 5px 0;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #323d5d;
+}
+
+.single-input-field-style {
+  width: calc(100% - 32px);
+  margin: 4px 0 8px;
+  padding: 12px 16px 12px 16px;
+  border-radius: 12px;
+  background-color: #f4f5fc;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: #323d5d;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #777e90;
+}
+
+textarea {
+  resize: none;
+  height: 128px;
 }
 </style>

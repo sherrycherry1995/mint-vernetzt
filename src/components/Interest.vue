@@ -14,9 +14,11 @@
     <div class="content">
       <div class="interests">
         <div
-          class="interest"
+          v-bind:class="profilInterests.indexOf(interest) === -1 ? 'interest' : 'interest active'"
           v-for="(interest, key) in interests"
           v-bind:key="`interest-${key}`"
+          :data-key="`interest-${key}`"
+          @click="updateInterests(interest, key)"
         >
           <span class="icon">
             <svg
@@ -50,14 +52,19 @@ export default {
   data() {
     return {
       interests: data.interests,
+      profilInterests :this.$parent.$data.profil.interests,
     };
   },
   methods: {
-    prev() {
-      this.$parent.prevView();
-    },
-    next() {
-      this.$parent.nextView();
+    updateInterests(interest) {
+      let interests = this.$parent.$data.profil.interests;
+      let index = interests.indexOf(interest);
+      if (index !== -1) {
+        this.$parent.$data.profil.interests.splice(index, 1);
+        return;
+      }
+
+      this.$parent.$data.profil.interests.push(interest);
     },
   },
 };

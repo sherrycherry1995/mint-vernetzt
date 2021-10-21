@@ -8,91 +8,44 @@
           <div class="image">
             <img src="../assets/avatar.png" />
           </div>
-          <div class="headline">Hi, I'm Mira McCormick</div>
+          <div class="headline">Hi, I'm {{ name }}</div>
         </div>
 
         <div class="intro">
           <div class="description">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod.
+            {{ about }}
           </div>
         </div>
         <div class="divider"></div>
         <div class="content">
           <div class="information">
             <span class="label">Organisation</span>
-            <div class="detail"><span class="text">xx</span></div>
+            <div class="detail">
+              <span class="text">{{ organisation }}</span>
+            </div>
             <span class="label">Website</span>
-            <div class="detail"><span class="text">xx</span></div>
+            <div class="detail">
+              <span class="text">{{ website }}</span>
+            </div>
             <span class="label">E-Mail</span>
-            <div class="detail"><span class="text">xx</span></div>
+            <div class="detail">
+              <span class="text">{{ mail }}</span>
+            </div>
             <span class="label">Active in</span>
             <div class="detail">
-              <span>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g fill="#738FD3" fill-rule="evenodd">
-                    <path
-                      d="M17.25 10.5a5.25 5.25 0 1 0-10.5 0c0 1.622.718 3.225 1.769 4.683 1.043 1.448 2.325 2.63 3.239 3.378.15.123.334.123.484 0 .914-.748 2.196-1.93 3.24-3.378 1.05-1.458 1.768-3.06 1.768-4.683zm1.5 0a6.75 6.75 0 1 0-13.5 0c0 4.119 3.619 7.634 5.557 9.222a1.864 1.864 0 0 0 2.386 0c1.938-1.588 5.557-5.103 5.557-9.222z"
-                    />
-                    <path
-                      d="M10.5 10.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0zm1.5-3a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"
-                    />
-                  </g>
-                </svg>
-                Leipzig
-              </span>
-            </div>
-            <span class="label">Expertise</span>
-            <div class="detail">
               <span
-                ><svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g fill="#738FD3" fill-rule="evenodd">
-                    <path
-                      d="M8.25 5.25a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h7.5a1.5 1.5 0 0 0 1.5-1.5V6.75a1.5 1.5 0 0 0-1.5-1.5h-7.5zm-3 1.5v10.5a3 3 0 0 0 3 3h7.5a3 3 0 0 0 3-3V6.75a3 3 0 0 0-3-3h-7.5a3 3 0 0 0-3 3z"
-                    />
-                    <path
-                      d="M8.25 7.5c0 .414.336.75.75.75h6a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0-.75.75zm1.5 3a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0zm3 0a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0zm2.25.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zM9.75 13.5a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0zm2.25.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zm3.75-.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0zM9 17.25a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zm3.75-.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0zm2.25.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z"
-                    />
-                  </g>
-                </svg>
-                Mathematik
-              </span>
-              <span
-                ><svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g fill="#738FD3" fill-rule="evenodd">
-                    <path
-                      d="M10 16.5V18h1.333v-1.5h1.334V18h.666c.369 0 .667.336.667.75s-.298.75-.667.75H8c-.368 0-.667-.336-.667-.75S7.632 18 8 18h.667v-1.5H10z"
-                      fill-rule="nonzero"
-                    />
-                    <path
-                      d="M5.333 13.5c0 .828.597 1.5 1.334 1.5h8c.736 0 1.333-.672 1.333-1.5v-6c0-.828-.597-1.5-1.333-1.5h-8c-.737 0-1.334.672-1.334 1.5v6zm1.334 3h8c1.472 0 2.666-1.343 2.666-3v-6c0-1.657-1.194-3-2.666-3h-8C5.194 4.5 4 5.843 4 7.5v6c0 1.657 1.194 3 2.667 3z"
-                    />
-                    <path
-                      d="M6.667 8.25c0 .414.298.75.666.75H12c.368 0 .667-.336.667-.75S12.368 7.5 12 7.5H7.333c-.368 0-.666.336-.666.75zm0 3c0 .414.298.75.666.75h1.334c.368 0 .666-.336.666-.75s-.298-.75-.666-.75H7.333c-.368 0-.666.336-.666.75z"
-                    />
-                  </g>
-                </svg>
-                Informatik
+                class="category"
+                v-for="(category, key) in categories"
+                v-bind:key="`category-${key}`"
+                :data-key="`category-${key}`"
+              >
+                <span class="icon" v-html="category.icon"> </span>
+                <span class="title">{{ category.title === 'Sonstige' ? $parent.$data.profil.otherValue : category.title }}</span>
               </span>
             </div>
             <span class="label">Role</span>
             <div class="detail">
-              <span>
+              <span v-for="(role, key) in roles" v-bind:key="`role-${key}`">
                 <svg
                   width="32"
                   height="32"
@@ -105,22 +58,7 @@
                     fill-rule="evenodd"
                   />
                 </svg>
-                Ehrenamt
-              </span>
-              <span
-                ><svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="m9.7 10.021-3.563.285a.525.525 0 0 0-.299.922l2.711 2.314c.15.128.216.33.17.521l-.829 3.46a.525.525 0 0 0 .784.572l3.053-1.858a.525.525 0 0 1 .546 0l3.053 1.858a.525.525 0 0 0 .784-.571l-.829-3.46a.525.525 0 0 1 .17-.522l2.71-2.314a.525.525 0 0 0-.298-.922L14.3 10.02a.525.525 0 0 1-.443-.32l-1.373-3.29a.525.525 0 0 0-.97 0L10.143 9.7a.525.525 0 0 1-.443.32zm4.169-4.189c-.693-1.66-3.045-1.66-3.738 0L8.987 8.573l-2.97.237c-1.797.144-2.524 2.389-1.152 3.56l2.256 1.925-.69 2.88c-.419 1.75 1.484 3.137 3.022 2.201L12 17.826l2.547 1.55c1.538.936 3.441-.45 3.022-2.201l-.69-2.88 2.256-1.926c1.372-1.17.645-3.415-1.153-3.559l-2.969-.237-1.144-2.74z"
-                    fill="#738FD3"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-                Dozentin
+                {{role}}
               </span>
             </div>
           </div>
@@ -204,8 +142,6 @@
   </div>
 </template>
 <script>
-import data from "../data/data";
-
 export default {
   name: "Finalize",
   props: {
@@ -214,7 +150,15 @@ export default {
   },
   data() {
     return {
-      interests: data.selected,
+      name: this.$parent.profil.name,
+      about: this.$parent.profil.about,
+      location: this.$parent.profil.location,
+      mail: this.$parent.profil.mail,
+      organisation: this.$parent.profil.organisation,
+      website: this.$parent.profil.website,
+      categories: this.$parent.profil.categories,
+      roles: this.$parent.profil.roles,
+      interests: this.$parent.profil.interests,
     };
   },
   methods: {
@@ -255,6 +199,10 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
+
+  .headline {
+      width: calc(100% - 124px);
+  }
 }
 
 .image {
@@ -284,7 +232,7 @@ export default {
   font-style: normal;
   line-height: 1.25;
   letter-spacing: normal;
-  text-align: center;
+  text-align: left;
   color: #23262f;
 }
 
@@ -350,11 +298,24 @@ export default {
     padding-left: 8px;
   }
 
-  span > svg {
+  & > span > svg {
+    margin-right: 8px;
+  }
+
+  span:not(.icon) > svg, span .icon {
     width: 24px;
     height: 24px;
-    margin-right: 12px;
   }
+
+  .category  > .icon{
+    margin: 0;
+  }
+
+  .icon > svg {
+    width: 100%;
+    height: 100%;
+  }
+
 
   span:not(:last-child) {
     margin-bottom: 8px;
@@ -377,9 +338,6 @@ export default {
   flex-direction: column;
   transition: border 0.3s ease;
   background-color: #e6ecfc;
-
-  .icon {
-  }
 
   .title {
     font-family: Poppins;

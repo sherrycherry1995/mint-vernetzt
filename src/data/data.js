@@ -44,15 +44,9 @@ export default {
     "Finanzierung",
     "Planung",
     "Workshops",
-    "Digitalisierung",
-    "Umwelt",
-    "Nachhaltigkeit",
-    "Mobilität",
+    "Fotografie",
+    "Technik",
+    "3D-Druck",
+    "Biologie",
   ],
-  selected: [
-    "Wissenschaft",
-    "Soziales",
-    "Video",
-    "Workshops",
-  ]
 };
