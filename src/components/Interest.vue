@@ -19,7 +19,18 @@
           v-bind:key="`interest-${key}`"
         >
           <span class="icon">
-            <font-awesome-icon icon="graduation-cap" />
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9.7 10.021-3.563.285a.525.525 0 0 0-.299.922l2.711 2.314c.15.128.216.33.17.521l-.829 3.46a.525.525 0 0 0 .784.572l3.053-1.858a.525.525 0 0 1 .546 0l3.053 1.858a.525.525 0 0 0 .784-.571l-.829-3.46a.525.525 0 0 1 .17-.522l2.71-2.314a.525.525 0 0 0-.298-.922L14.3 10.02a.525.525 0 0 1-.443-.32l-1.373-3.29a.525.525 0 0 0-.97 0L10.143 9.7a.525.525 0 0 1-.443.32zm4.169-4.189c-.693-1.66-3.045-1.66-3.738 0L8.987 8.573l-2.97.237c-1.797.144-2.524 2.389-1.152 3.56l2.256 1.925-.69 2.88c-.419 1.75 1.484 3.137 3.022 2.201L12 17.826l2.547 1.55c1.538.936 3.441-.45 3.022-2.201l-.69-2.88 2.256-1.926c1.372-1.17.645-3.415-1.153-3.559l-2.969-.237-1.144-2.74z"
+                fill="#738FD3"
+                fill-rule="evenodd"
+              />
+            </svg>
           </span>
           <span class="title">{{ interest }}</span>
         </div>
@@ -88,7 +99,7 @@ export default {
   line-height: 1.71;
   letter-spacing: normal;
   text-align: center;
- color: #777e90;
+  color: #777e90;
 }
 
 .interests {
@@ -101,12 +112,18 @@ export default {
 .interest {
   padding: 16px 0;
   border-radius: 16px;
-  border: solid 1px #8f9bb9;
-  background-color: #f4f5fc;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: border 0.3s ease;
+  cursor: pointer;
+  background-color: #e6ecfc;
+
+  &.active,
+  &:hover {
+    border: solid 1px #7290d5;
+  }
 
   .icon {
   }
@@ -119,11 +136,8 @@ export default {
     font-style: normal;
     line-height: 1.82;
     letter-spacing: normal;
+    text-align: center;
     color: #738fd3;
-    max-width: 100%;
-    max-width: calc(100% - 32px);
-    hyphens: auto;
-    word-wrap: break-word;
   }
 }
 </style>
