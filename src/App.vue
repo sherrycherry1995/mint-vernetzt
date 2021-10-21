@@ -56,7 +56,7 @@ export default {
   },
   data() {
     return {
-      current: 2,
+      current: 0,
       max: 5,
       transitionEnter: "fade-enter",
       transitionLeave: "fade-leave-active",
@@ -120,15 +120,17 @@ body,
 }
 
 .step {
-  padding-bottom: 60px;
+  padding-bottom: 80px;
+  overflow: hidden;
 }
 
 #app {
   max-width: 380px;
   margin: 0 auto;
-  padding: 20px 24px 92px;
+  padding: 20px 24px 72px;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .navigation {
