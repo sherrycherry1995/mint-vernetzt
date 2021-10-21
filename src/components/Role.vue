@@ -53,9 +53,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .image {
-  width: 270px;
-  height: 200px;
-  margin: 20px auto 32px;
+  width: 220px;
+  height: 162px;
+  margin: 16px auto 32px;
 }
 
 .image img {
@@ -88,7 +88,7 @@ export default {
   line-height: 1.71;
   letter-spacing: normal;
   text-align: center;
-  color: #23262f;
+ color: #777e90;
 }
 
 .roles {

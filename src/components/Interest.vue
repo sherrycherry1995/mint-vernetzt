@@ -53,9 +53,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .image {
-  width: 270px;
-  height: 200px;
-  margin: 20px auto 32px;
+  width: 220px;
+  height: 162px;
+  margin: 16px auto 32px;
 }
 
 .image img {
@@ -88,7 +88,7 @@ export default {
   line-height: 1.71;
   letter-spacing: normal;
   text-align: center;
-  color: #23262f;
+ color: #777e90;
 }
 
 .interests {
@@ -113,14 +113,13 @@ export default {
 
   .title {
     font-family: Poppins;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.67;
+    line-height: 1.82;
     letter-spacing: normal;
-    text-align: center;
-    color: #7a8ab3;
+    color: #738fd3;
     max-width: 100%;
     max-width: calc(100% - 32px);
     hyphens: auto;

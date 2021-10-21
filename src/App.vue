@@ -41,7 +41,7 @@ export default {
   },
   data() {
     return {
-      current: 0,
+      current: 1,
       max: 5,
       transitionEnter: "fade-enter",
       transitionLeave: "fade-leave-active",
@@ -52,11 +52,18 @@ export default {
       this.current--;
       this.transitionEnter = "fade-enter-left";
       this.transitionLeave = "fade-leave-active-left";
+
+      window.setTimeout(function () {
+        window.scrollTo(0, 0);
+      }, 500);
     },
     nextView() {
       this.current++;
       this.transitionEnter = "fade-enter";
       this.transitionLeave = "fade-enter";
+      window.setTimeout(function () {
+        window.scrollTo(0, 0);
+      }, 500);
     },
   },
 };
@@ -91,6 +98,10 @@ html,
 body,
 #app {
   overflow-x: hidden;
+}
+
+.step {
+  padding-bottom: 60px;
 }
 
 #app {

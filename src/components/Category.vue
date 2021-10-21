@@ -1,6 +1,6 @@
 <template>
   <div class="step slide">
-     <div class="steps">{{ step + 1}} of {{maxSteps}}</div>
+    <div class="steps">{{ step + 1 }} of {{ maxSteps }}</div>
     <div class="image">
       <img src="../assets/category.png" />
     </div>
@@ -18,10 +18,8 @@
           v-for="(category, key) in categories"
           v-bind:key="`category-${key}`"
         >
-          <span class="icon">
-            <font-awesome-icon icon="graduation-cap" />
-          </span>
-          <span class="title">{{ category }}</span>
+          <span class="icon" v-html="category.icon"> </span>
+          <span class="title">{{ category.title }}</span>
         </div>
       </div>
     </div>
@@ -53,9 +51,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .image {
-  width: 270px;
-  height: 200px;
-  margin: 20px auto 32px;
+  width: 220px;
+  height: 162px;
+  margin: 16px auto 32px;
 }
 
 .image img {
@@ -88,7 +86,7 @@ export default {
   line-height: 1.71;
   letter-spacing: normal;
   text-align: center;
-  color: #23262f;
+ color: #777e90;
 }
 
 .categories {
@@ -99,7 +97,7 @@ export default {
 }
 
 .category {
-  padding: 12px 24px;
+  padding: 16px;
   border-radius: 16px;
   border: solid 1px #8f9bb9;
   background-color: #f4f5fc;
@@ -107,6 +105,8 @@ export default {
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
+  border: solid 1px #7290d5;
+  background-color: #e6ecfc;
 
   .icon {
     width: 64px;
