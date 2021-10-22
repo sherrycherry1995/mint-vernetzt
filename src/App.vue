@@ -191,7 +191,7 @@ textarea {
 }
 
 .button:first-child:last-child {
-  width: calc(100% - 32px);
+  width: calc(100%);
   margin-left: 0;
 }
 
